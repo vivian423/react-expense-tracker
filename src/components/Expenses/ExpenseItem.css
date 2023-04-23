@@ -1,0 +1,84 @@
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  background-color: #6c9a8b;
+}
+
+.expense-item__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-end;
+  flex-flow: column-reverse;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.expense-item h2 {
+  color: #3c6e71;
+  font-size: 1.2rem;
+  flex: 1;
+  margin: 0 1.2rem;
+  color: white;
+}
+
+.expense-item__price {
+  padding: 0.8em 1.8em;
+  border: 2px solid #1c3041e6;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 200;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #1c3041e6;
+}
+
+.expense-item__price::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #1c3041e6;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.expense-item__price:hover::before {
+  width: 105%;
+}
+.expense-item__price:hover {
+  color: whitesmoke;
+  font-weight: lighter;
+}
+
+@media (min-width: 580px) {
+  .expense-item__description {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+
+  .expense-item__description h2 {
+    font-size: 1.15rem;
+    font-weight: 200;
+  }
+
+  .expense-item__price {
+    font-size: 1.15rem;
+    font-weight: 200;
+    padding: 0.5rem 1.5rem;
+  }
+}
